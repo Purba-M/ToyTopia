@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80",
+    "toyName": "Cuddly Teddy Bear",
+    "rating": 4.8,
+    "availableQuantity": 15,
+    "price": "$18.99"
+  },
+  {
+    "id": 2,
+    "thumbnail":  "https://i.postimg.cc/LXPys3s6/hoyoun-lee-v-Dnkv-IK6Yfk-unsplash.jpg",
+    "toyName": "Totoro Toy",
+    "rating": 4.7,
+    "availableQuantity": 8,
+    "price": "$24.99"
+  },
+  {
+    "id": 3,
+    "thumbnail": "https://i.postimg.cc/QxYcRW8X/vladislav-glukhotko-w-A7m-Gh-Ji-Ky-M-unsplash.jpg",
+    "toyName": "Transformers",
+    "rating": 4.9,
+    "availableQuantity": 20,
+    "price": "$29.50"
+  },
+  {
+    "id": 4,
+    "thumbnail": "https://i.postimg.cc/6QJ4XrFz/thimo-pedersen-dip9IIw-UK6w-unsplash.jpg",
+    "toyName": "Pokemon Cards",
+    "rating": 4.5,
+    "availableQuantity": 12,
+    "price": "$34.00"
+  },
+  {
+    "id": 5,
+    "thumbnail": "https://i.postimg.cc/BQSdmRbs/pexels-polesietoys-4491702.jpg",
+    "toyName": "Building Block Set",
+    "rating": 4.6,
+    "availableQuantity": 10,
+    "price": "$22.49"
+  },
+  {
+    "id": 6,
+    "thumbnail": "https://i.postimg.cc/JhNxV4Yg/pexels-cup-of-couple-8014627.jpg",
+    "toyName": "Dinasour Figure Set",
+    "rating": 4.9,
+    "availableQuantity": 6,
+    "price": "$27.99"
+  }
+]
