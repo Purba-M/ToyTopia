@@ -5,15 +5,23 @@
     "toyName": "Cuddly Teddy Bear",
     "rating": 4.8,
     "availableQuantity": 15,
-    "price": "$18.99"
+    "price": "$18.99",
+    "sellerName": "Soft & Cozy Toys",
+    "sellerEmail": "support@softcozytoys.com",
+    "description": "A fluffy and adorable teddy bear made with soft cotton fabric. Perfect for bedtime cuddles or gifting.",
+    "subCategory": "Plush Toys"
   },
   {
     "id": 2,
-    "thumbnail":  "https://i.postimg.cc/LXPys3s6/hoyoun-lee-v-Dnkv-IK6Yfk-unsplash.jpg",
+    "thumbnail": "https://i.postimg.cc/LXPys3s6/hoyoun-lee-v-Dnkv-IK6Yfk-unsplash.jpg",
     "toyName": "Totoro Toy",
     "rating": 4.7,
     "availableQuantity": 8,
-    "price": "$24.99"
+    "price": "$24.99",
+    "sellerName": "Miyazaki Crafts",
+    "sellerEmail": "hello@miyazakicrafts.com",
+    "description": "A hand-crafted Totoro plush inspired by the classic film. Made from eco-friendly fabric and non-toxic dyes.",
+    "subCategory": "Anime Plushies"
   },
   {
     "id": 3,
@@ -21,7 +29,11 @@
     "toyName": "Transformers",
     "rating": 4.9,
     "availableQuantity": 20,
-    "price": "$29.50"
+    "price": "$29.50",
+    "sellerName": "Toy Heroes BD",
+    "sellerEmail": "info@toyheroesbd.com",
+    "description": "An action-packed Transformers robot toy that converts between robot and vehicle mode. Great for kids aged 6+.",
+    "subCategory": "Action Figures"
   },
   {
     "id": 4,
@@ -29,7 +41,11 @@
     "toyName": "Pokemon Cards",
     "rating": 4.5,
     "availableQuantity": 12,
-    "price": "$34.00"
+    "price": "$34.00",
+    "sellerName": "Card Vault",
+    "sellerEmail": "sales@cardvault.com",
+    "description": "A collectible pack of authentic Pokémon trading cards. Includes rare holographic cards and booster packs.",
+    "subCategory": "Trading Cards"
   },
   {
     "id": 5,
@@ -37,7 +53,11 @@
     "toyName": "Building Block Set",
     "rating": 4.6,
     "availableQuantity": 10,
-    "price": "$22.49"
+    "price": "$22.49",
+    "sellerName": "Creative Blocks",
+    "sellerEmail": "contact@creativeblocks.com",
+    "description": "Colorful interlocking building blocks that spark creativity and improve motor skills for children.",
+    "subCategory": "Building Toys"
   },
   {
     "id": 6,
@@ -45,6 +65,10 @@
     "toyName": "Dinasour Figure Set",
     "rating": 4.9,
     "availableQuantity": 6,
-    "price": "$27.99"
+    "price": "$27.99",
+    "sellerName": "Jurassic Fun",
+    "sellerEmail": "hello@jurassicfun.com",
+    "description": "A realistic dinosaur figure set that includes T-Rex, Triceratops, and more. Made from durable non-toxic plastic.",
+    "subCategory": "Educational Toys"
   }
 ]

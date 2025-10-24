@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 const PopularToys = () => {
+  
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
@@ -32,9 +34,9 @@ const PopularToys = () => {
               <p>Available: {toy.availableQuantity}</p>
               <p>Price: {toy.price}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-sm bg-[#5c7a72] text-white">
+                <Link to={`/toy-details/${toy.id}`} className="btn btn-sm bg-[#5c7a72] text-white">
                   View More
-                </button>
+                </Link>
               </div>
             </div>
           </div>

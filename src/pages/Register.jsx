@@ -1,9 +1,9 @@
-import React, { use } from 'react';
+import React, { use, useContext } from 'react';
 import { Link } from 'react-router';
 import { Authcontext } from '../provider/AuthProvider';
 
 const Register = () => {
-    const {createuser,setuser}=use(Authcontext)
+    const {createuser,setuser}=useContext(Authcontext)
     const handleregister=(e)=>{
         e.preventDefault();
         console.log(e.target)
@@ -21,7 +21,7 @@ const Register = () => {
 
       .catch((error)=>{
            const errorcode=error.code;
-           const errormsg=error.msg;
+           const errormsg=error.message;
            alert(errormsg)
       })
 

@@ -5,6 +5,7 @@ import Login from "../pages/LogIn";
 import LogIn from "../pages/LogIn";
 import Register from "../pages/Register";
 import Authlayout from "../layouts/Authlayout";
+import ToyDetails from "../pages/ToyDetails";
 
 
 const router=createBrowserRouter([
@@ -32,6 +33,12 @@ const router=createBrowserRouter([
                     element:<Register></Register>
                 }
         ]
+    },
+    {
+        path:'/toy-details/:id',
+        element:<ToyDetails></ToyDetails>,
+        loader:()=>fetch('/Toys.json')
+
     },
     {
             path:'/*',
