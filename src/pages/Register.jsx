@@ -1,14 +1,23 @@
-import React, { use, useContext } from 'react';
+import React, { use, useContext, useState } from 'react';
 import { Link } from 'react-router';
 import { Authcontext } from '../provider/AuthProvider';
 
 const Register = () => {
-    const {createuser,setuser}=useContext(Authcontext)
+    const {createuser,setuser,updateuser}=useContext(Authcontext)
+    const[nameError,setNameError]=useState("")
     const handleregister=(e)=>{
+      
         e.preventDefault();
         console.log(e.target)
         const form=e.target;
         const name=form.name.value;
+        if(name.length<5){
+          setNameError("Name should be more than 5 characters")
+          return;
+        }
+        else{
+          setNameError("")
+        }
         const photo=form.photo.value;
         const email=form.email.value;
         const password=form.password.value;
@@ -16,11 +25,18 @@ const Register = () => {
         createuser(email,password)
         .then(result=>{
             const user=result.user;
-            setuser(user)
+            updateuser( {displayName:name,photoURL:photo}).then(()=>{
+            setuser({...user,displayName:name,photoURL:photo})
+            })
+            .catch((error)=>{
+              console.log(error)
+              setuser(user)
+            })
+            
         })
 
       .catch((error)=>{
-           const errorcode=error.code;
+          //  const errorcode=error.code;
            const errormsg=error.message;
            alert(errormsg)
       })
@@ -35,6 +51,8 @@ const Register = () => {
             {/* name */}
               <label className="label">Name</label>
             <input name='name' type="text" className="input w-full" placeholder="name" />
+            {nameError && <p className="text-red-500 text-center mt-2">{nameError}</p>}
+
 
             {/* photo */}
               <label className="label">Photo</label>
