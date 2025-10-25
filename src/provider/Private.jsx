@@ -39,7 +39,7 @@ const Private = ({ children }) => {
     return children;
   }
 
-  // Pass the current pathname inside `state` for redirect after login
+ 
   return <Navigate to="/auth/login" state={{ pathname: location.pathname }} replace />;
 };
 

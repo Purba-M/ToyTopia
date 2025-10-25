@@ -4,8 +4,8 @@ import page from '../assets/image.png'
 
 const ErrorPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80px] text-center px-4 ">
-      <img src={page}></img>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-base-200">
+      <img src={page} className="h-[50vh] w-auto object-contain"></img>
      
     </div>
   );

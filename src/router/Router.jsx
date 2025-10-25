@@ -10,12 +10,14 @@ import Private from "../provider/Private";
 import ForgetPassword from "../pages/ForgetPassword";
 import MyProfile from "../pages/MyProfile";
 import ErrorPage from "../pages/ErrorPage";
+import ErrorLayout from "../layouts/ErrorLayout";
 
 
 const router=createBrowserRouter([
     {
         path:'/',
         element:<MainLayout></MainLayout>,
+        errorElement:<ErrorLayout></ErrorLayout>,
         children:[
             {
                 index:true,
@@ -31,6 +33,7 @@ const router=createBrowserRouter([
     {
         path:'/auth',
         element:<Authlayout></Authlayout>,
+        errorElement:<ErrorLayout></ErrorLayout>, 
         children:[
              {
                     path:'/auth/login',
@@ -51,10 +54,6 @@ const router=createBrowserRouter([
     {
         path:'/forget',
         element:<ForgetPassword></ForgetPassword>
-    },
-    {
-            path:'/*',
-            element:<ErrorPage></ErrorPage>
-        }
+    }
 ])
 export default router;
