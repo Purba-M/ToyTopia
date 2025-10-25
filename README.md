@@ -67,7 +67,7 @@
   <li>Real-time success and error feedback using toast notifications</li>
 </ul>
 
-<h3> Manage Toys Page</h3>
+<h3>➕  Manage Toys Page</h3>
 <ul>
   <li>Add new toy information via form</li>
   <li>Update or delete your added toys</li>
