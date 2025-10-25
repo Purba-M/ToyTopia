@@ -45,13 +45,13 @@
 <ul>
   <li>Hero section with a responsive Swiper slider</li>
   <li>Featured toy categories</li>
-  <li>Testimonials and promotional sections</li>
+
 </ul>
 
 <h3>🧸 All Toys Page</h3>
 <ul>
   <li>Displays all toys fetched from the server</li>
-  <li>Includes search and sorting by price or rating</li>
+  
 </ul>
 
 <h3>🔍 Toy Details Page</h3>
@@ -67,7 +67,7 @@
   <li>Real-time success and error feedback using toast notifications</li>
 </ul>
 
-<h3>➕ Add / Manage Toys Page</h3>
+<h3> Manage Toys Page</h3>
 <ul>
   <li>Add new toy information via form</li>
   <li>Update or delete your added toys</li>
@@ -110,5 +110,5 @@ npm run dev
 <p>This project is licensed under the MIT License.</p>
 
 <p align="center">
-  🚀 Developed with ❤️ by <b>Your Name</b>
+  🚀 Developed by <b>Moni</b>
 </p>
