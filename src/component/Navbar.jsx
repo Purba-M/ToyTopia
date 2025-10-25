@@ -115,7 +115,7 @@ const Navbar = () => {
           </button>
 
           <NavLink
-            to="/home"
+            to="/"
             onClick={() => setIsOpen(false)}
             className="text-lg"
           >
