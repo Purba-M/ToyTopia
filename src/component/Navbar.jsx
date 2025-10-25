@@ -2,12 +2,13 @@ import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import { useContext, useState } from "react";
 import { Authcontext } from "../provider/AuthProvider";
-import pic from '../assets/user.png'
+import pic from "../assets/user.png";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
-  const { user, logout} = useContext(Authcontext);
+  const { user, logout } = useContext(Authcontext);
   const [isOpen, setIsOpen] = useState(false);
+  const [showName, setShowName] = useState(false);
 
   const handlelogout = () => {
     logout()
@@ -48,13 +49,12 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-     
       <div className="hidden lg:flex items-center gap-6">
         <ul className="menu menu-horizontal px-1 flex items-center gap-4">
           <li>
             <NavLink
               to="/"
-              className={({isActive}) =>
+              className={({ isActive }) =>
                 isActive ? "text-rose-600 font-semibold" : ""
               }
             >
@@ -74,20 +74,19 @@ const Navbar = () => {
         </ul>
       </div>
 
-    
       <div className="flex items-center gap-3">
         {user ? (
           <div className="flex items-center gap-3">
-            <div className="relative group">
+            <div className="relative group" onClick={() => setShowName(!showName)}>
               <img
                 src={pic}
                 alt="User"
-                className="w-10 h-10 rounded-full cursor-pointer border"
-              />
-              <span className="absolute bottom-12 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition">
-                {user.displayName}
-              </span>
+                className="w-10 h-10 rounded-full cursor-pointer border"/>
+              <div className={`absolute top-12 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded-md px-2 py-1 transition duration-300 whitespace-nowrap z-50 ${showName?"opacity-100":"opacity-0 group-hover:opacity-100"}`}>
+                {user.displayName || "User"}
+              </div>
             </div>
+
             <button
               onClick={handlelogout}
               className="btn btn-outline btn-sm text-rose-600"
@@ -105,7 +104,6 @@ const Navbar = () => {
         )}
       </div>
 
-    
       {isOpen && (
         <div className="fixed top-0 left-0 w-3/4 max-w-xs h-full bg-base-200 shadow-lg z-30 flex flex-col p-6 gap-4 lg:hidden transition-transform duration-300 ease-in-out">
           <button
@@ -115,11 +113,7 @@ const Navbar = () => {
             ✕
           </button>
 
-          <NavLink
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className="text-lg"
-          >
+          <NavLink to="/" onClick={() => setIsOpen(false)} className="text-lg">
             Home
           </NavLink>
           <NavLink

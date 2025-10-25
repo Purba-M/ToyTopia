@@ -3,7 +3,7 @@ import {FaGamepad,FaCarSide,FaPuzzlePiece,FaDolly,FaDog,} from "react-icons/fa";
 
 const ShopByAge = () => {
   return (
-    <div className="container mx-auto mt-20">
+    <div className="max-w-7xl mx-auto px-6 md:px-8 mt-20">
       <div className="text-center">
         <h2 className="text-[40px] font-bold text-black">Shop by Category</h2>
         <p>
