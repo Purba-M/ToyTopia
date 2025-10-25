@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ErrorPage from "../pages/ErrorPage";
-import page from "../assets/image.png"
+import page from "../assets/error.png"
 
 const ErrorLayout = () => {
   return (

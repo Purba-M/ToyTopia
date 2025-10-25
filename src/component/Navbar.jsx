@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import { useContext, useState } from "react";
 import { Authcontext } from "../provider/AuthProvider";
+import pic from '../assets/user.png'
 
 const Navbar = () => {
   const { user, logout} = useContext(Authcontext);
@@ -78,9 +79,7 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <div className="relative group">
               <img
-                src={
-                  user.photoURL || "https://i.ibb.co/2n4D9FJ/default-avatar.png"
-                }
+                src={pic}
                 alt="User"
                 className="w-10 h-10 rounded-full cursor-pointer border"
               />
