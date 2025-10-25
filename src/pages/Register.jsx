@@ -1,6 +1,7 @@
 import React, { use, useContext, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { Authcontext } from "../provider/AuthProvider";
+import {toast} from "react-hot-toast";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -57,6 +58,7 @@ const Register = () => {
         updateuser({ displayName: name, photoURL: photo })
           .then(() => {
             setuser({ ...user, displayName: name, photoURL: photo });
+            
              navigate("/");
           })
           .catch((error) => {

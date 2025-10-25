@@ -1,7 +1,10 @@
-import React, { use, useState } from "react";
-import { Helmet } from "react-helmet";
+import React, { use, useContext, useState } from "react";
+import Swal from "sweetalert2";
+
+
 import { Link, useLocation, useNavigate } from "react-router";
 import { Authcontext } from "../provider/AuthProvider";
+import {toast} from "react-hot-toast";
 
 const LogIn = () => {
   const [error, setError] = useState();
@@ -9,7 +12,7 @@ const LogIn = () => {
 
   const location = useLocation();
   console.log(location);
-  const { signin, googleSignIn } = use(Authcontext);
+  const { signin, googleSignIn } = useContext(Authcontext);
   const navigate = useNavigate();
 
   const handlelogin = (e) => {
@@ -21,9 +24,9 @@ const LogIn = () => {
     signin(email, password)
       .then((res) => {
         const user = res.user;
-        console.log(user);
-        alert("Logged in successfully!");
-        navigate(location.state?.pathname || "/", { replace: true });
+        // console.log(user);
+         toast.success("Welcome back! 🎉");
+       navigate(location.state?.pathname || "/", { replace: true });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -36,8 +39,8 @@ const LogIn = () => {
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((res) => {
-        alert("Logged in with Google!");
-        navigate(location.state?.pathname || "/", { replace: true });
+        toast.success("Logged in with Google! 🚀");
+     navigate(location.state?.pathname || "/", { replace: true });
       })
       .catch((error) => {
         setError(error.code);

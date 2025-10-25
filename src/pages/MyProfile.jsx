@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Authcontext } from "../provider/AuthProvider";
 import pic from '../assets/user.png'
+import { Link } from "react-router";
 
 const MyProfile = () => {
   const { user } = useContext(Authcontext);
@@ -32,9 +33,9 @@ const MyProfile = () => {
           <button className="btn btn-outline text-rose-600 hover:bg-rose-600 hover:text-white">
             Update Info
           </button>
-          <button className="btn btn-outline text-[#93d0c6] hover:bg-[#93d0c6] hover:text-white">
+          <Link to='/' className="btn btn-outline text-[#93d0c6] hover:bg-[#93d0c6] hover:text-white">
             My Toys
-          </button>
+          </Link>
         </div>
       </div>
     </div>

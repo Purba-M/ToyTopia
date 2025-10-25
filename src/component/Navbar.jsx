@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import { useContext, useState } from "react";
 import { Authcontext } from "../provider/AuthProvider";
 import pic from '../assets/user.png'
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logout} = useContext(Authcontext);
@@ -10,7 +11,7 @@ const Navbar = () => {
 
   const handlelogout = () => {
     logout()
-      .then(() => alert("Logged Out Successfully"))
+      .then(() => toast("Logged Out Succesfully 🎉"))
       .catch((error) => {
         console.log(error);
         alert("Logged Out Failed");
