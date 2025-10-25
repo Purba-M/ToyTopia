@@ -19,7 +19,7 @@
 
 <h2>🔗 Live URL</h2>
 <p>
-  <a href="https://your-toytopia-live-link.netlify.app" target="_blank">👉 Visit ToyTopia Live</a>
+  <a href="[https://your-toytopia-live-link.netlify.app](https://toytopia-ff3a7.web.app/)" target="_blank">👉 Visit ToyTopia Live</a>
 </p>
 
 <hr/>
