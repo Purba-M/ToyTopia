@@ -19,7 +19,7 @@
 
 <h2>🔗 Live URL</h2>
 <p>
- <a href="https://toytopia-ff3a7.web.app/"> Visit Here </a>
+ <a href="[https://toytopia-ff3a7.web.app/](https://toytopia-ff3a7.web.app)"> Visit Here </a>
 </p>
 
 <hr/>
