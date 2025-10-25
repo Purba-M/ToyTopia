@@ -3,6 +3,7 @@ import { Authcontext } from "../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import pic from "../assets/user.png";
 import { Link } from "react-router";
+import toast from "react-hot-toast";
 
 const MyProfile = () => {
   const {user} =useContext(Authcontext);
@@ -18,11 +19,11 @@ const MyProfile = () => {
         displayName: name,
         photoURL: photoURL,
       });
-      alert("Profile updated successfully!");
+      toast("Profile updated successfully!");
       setEditMode(false);
     } catch (error) {
       console.error("Error updating profile:", error);
-      alert("Failed to update profile. Try again!");
+      toast("Failed to update profile. Try again!");
     }
   };
 
