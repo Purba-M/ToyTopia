@@ -11,6 +11,7 @@ import ForgetPassword from "../pages/ForgetPassword";
 import MyProfile from "../pages/MyProfile";
 import ErrorPage from "../pages/ErrorPage";
 import ErrorLayout from "../layouts/ErrorLayout";
+import Cart from "../pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,15 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+  path: "/cart",
+  element: (
+    <Private>
+      <Cart />
+    </Private>
+  ),
+},
+
   {
     path: "/toy-details/:id",
     element: (

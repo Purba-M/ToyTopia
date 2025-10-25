@@ -3,11 +3,11 @@ import { FaClock, FaKey, FaRocket, FaSun } from "react-icons/fa";
 
 const Benefits = () => {
   return (
-    <div className="bg-gradient-to-r from-[#ff9a9e] via-[#fad0c4] to-[#fcb69f] rounded-2xl py-5 mt-20">
+    <div className="bg-gradient-to-r from-[#ff9a9e] via-[#fad0c4] to-[#fcb69f] rounded-2xl py-10 mt-24 relative z-10">
     <div className="container mx-auto mt-15">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-center place-items-center ">
       <div className="flex flex-col items-center justify-center h-[180px]">
-        <FaClock className="text-6xl mx-auto mb-4"></FaClock>
+        <FaClock className="text-6xl mx-auto mb-4 "></FaClock>
         <h2 className="font-bold text-white text-[30px]">Fast Delivery</h2>
         <p className="text-white ">
           Find tracking information and order <br />

@@ -1,22 +1,21 @@
-import React, { use, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { Authcontext } from "../provider/AuthProvider";
-import {toast} from "react-hot-toast";
+import toast from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const navigate = useNavigate();
   const { createuser, setuser, updateuser, googleSignIn } =
-  useContext(Authcontext);
+    useContext(Authcontext);
   const [nameError, setNameError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [passwordError, setPasswordError] = useState("");
   const [confirmError, setConfirmError] = useState("");
 
-
   const handleregister = (e) => {
     e.preventDefault();
-    // console.log(e.target);
     const form = e.target;
     const name = form.name.value;
     const photo = form.photo.value;
@@ -34,40 +33,36 @@ const Register = () => {
       setNameError("");
     }
     if (password.length < 6) {
-      alert("Password must be at least 6 characters long.");
+      toast.error("Password must be at least 6 characters long.");
       return;
     }
     if (!/[A-Z]/.test(password)) {
-      alert("Password must contain at least one uppercase letter.");
+      toast.error("Password must contain an uppercase letter.");
       return;
     }
     if (!/[a-z]/.test(password)) {
-      alert("Password must contain at least one lowercase letter.");
+      toast.error("Password must contain a lowercase letter.");
       return;
     }
-
     if (password !== confirmPassword) {
       setConfirmError("Passwords do not match.");
       return;
     }
 
-    console.log(name, photo, email, password);
     createuser(email, password)
       .then((result) => {
         const user = result.user;
         updateuser({ displayName: name, photoURL: photo })
           .then(() => {
             setuser({ ...user, displayName: name, photoURL: photo });
-            
-             navigate("/");
+            navigate("/");
           })
           .catch((error) => {
-            console.log(error);
-            setuser(user);
+            toast.error("Invalid email or password!");
+            setNameError(error.code);
           });
       })
-
-       .catch((error) => {
+      .catch((error) => {
         setPasswordError(error.message);
       });
   };
@@ -77,7 +72,8 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         setuser(user);
-        alert("Signed in with Google successfully!");
+        toast.success(`Welcome ${user.displayName || "to Toytopia"}!`);
+        navigate("/");
       })
       .catch((error) => {
         setPasswordError(error.message);
@@ -87,31 +83,30 @@ const Register = () => {
   return (
     <div className="flex justify-center min-h-screen items-center bg-gradient-to-br from-pink-200 via-yellow-100 to-lime-100">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
-        <h2 className="font-semibold text-center text-[20px]">  🎠 Create Your ToyStore Account</h2>
-        <form onSubmit={handleregister} className="card-body 	bg-white">
-          <fieldset className="fieldset ">
-            {/* name */}
+        <h2 className="font-semibold text-center text-[20px]">
+          🎠 Create Your ToyStore Account
+        </h2>
+        <form onSubmit={handleregister} className="card-body bg-white">
+          <fieldset className="fieldset">
             <label className="label">Name</label>
             <input
               name="name"
               type="text"
-              className="input w-full rounded-[20px] "
+              className="input w-full rounded-[20px]"
               placeholder="name"
             />
             {nameError && (
               <p className="text-red-500 text-center mt-2">{nameError}</p>
             )}
 
-            {/* photo */}
             <label className="label">Photo</label>
             <input
               name="photo"
-              type=""
+              type="text"
               className="input w-full rounded-[20px]"
               placeholder="photo"
             />
 
-            {/* email */}
             <label className="label">Email</label>
             <input
               name="email"
@@ -121,52 +116,66 @@ const Register = () => {
             />
 
             <label className="label">Password</label>
-             <div className="relative">
-            <input
-              name="password"
-              type={showPassword ? "text" : "password"}
-              className="input w-full rounded-[20px]"
-              placeholder="Password"
-            />
-            <span
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-3 cursor-pointer text-sm text-gray-500"
-            >
-              {showPassword ? "Hide" : "Show"}
-            </span>
-          </div>
-            {passwordError && <p className="text-red-500 text-sm">{passwordError}</p>}
+            <div className="relative">
+              <input
+                name="password"
+                type={showPassword ? "text" : "password"}
+                className="input w-full rounded-[20px] pr-10"
+                placeholder="Password"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
+            {passwordError && (
+              <p className="text-red-500 text-sm">{passwordError}</p>
+            )}
 
-            {/* confirm password */}
             <label className="label">Confirm Password</label>
-             <div className="relative">
-            <input
-              name="confirmPassword"
-              type={showConfirm ? "text" : "password"}
-              className="input w-full rounded-[20px]"
-              placeholder="Confirm Password"/>
-            <span onClick={() => setShowConfirm(!showConfirm)}
-              className="absolute right-3 top-3 cursor-pointer text-sm text-gray-500">
-              {showConfirm?"Hide":"Show"}
-            </span>
-          </div>
-           {confirmError && <p className="text-red-500 text-sm">{confirmError}</p>}
+            <div className="relative">
+              <input
+                name="confirmPassword"
+                type={showConfirm ? "text" : "password"}
+                className="input w-full rounded-[20px] pr-10"
+                placeholder="Confirm Password"
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirm(!showConfirm)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600"
+              >
+                {showConfirm ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
+            {confirmError && (
+              <p className="text-red-500 text-sm">{confirmError}</p>
+            )}
 
-          {/* REGISTER BUTTON */}
-            <button type="submit" className="btn mt-4 w-full rounded-[20px] bg-red-600 text-white">
+            <button
+              type="submit"
+              className="btn mt-4 w-full rounded-[20px] bg-red-600 text-white"
+            >
               Register
             </button>
             <div className="divider">or</div>
 
-            {/* CONTINUE WITH GOOGLE */}
-            <button type="button" onClick={handleGoogleLogin}
-              className="btn btn-outline w-full rounded-[20px]">
+            <button
+              type="button"
+              onClick={handleGoogleLogin}
+              className="btn btn-outline w-full rounded-[20px]"
+            >
               Continue with Google
             </button>
 
-              {/* Go back to Login */}
-            <Link to="/auth/login"  className="block text-center text-pink-500 font-medium text-sm pt-3 hover:underline">
-              Dont’t Have An Account ? Login
+            <Link
+              to="/auth/login"
+              className="block text-center text-pink-500 font-medium text-sm pt-3 hover:underline"
+            >
+              Don’t Have An Account ? Login
             </Link>
           </fieldset>
         </form>

@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router";
 
-const ToyDeatilsCard = ({toy}) => {
+import toast from "react-hot-toast";
+import { CartContext } from "../provider/CartContext";
+
+const ToyDetailsCard = ({ toy }) => {
   const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext);
 
-  if (!toy) 
-    return <p className="text-center mt-20 text-gray-500">Loading toy details...</p>;
 
-  const {thumbnail,name,description,price,rating,category,availableQuantity,sellerName}=toy;
+  if (!toy)
+    return (
+      <p className="text-center mt-20 text-gray-500">Loading toy details...</p>
+    );
+
+  const { thumbnail, name, description, price, rating, category, availableQuantity, sellerName } = toy;
+
+  const handleAddToCart = () => {
+    addToCart(toy);
+    toast.success("Added to cart 🛒");
+    navigate("/cart");
+  };
 
   return (
     <div className="max-w-6xl mx-auto bg-white rounded-xl shadow-lg p-6 mb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          <img src={thumbnail} className="rounded-lg shadow-md w-full h-[400px] object-cover"/>
+        <div>
+          <img
+            src={thumbnail}
+            className="rounded-lg shadow-md w-full h-[400px] object-cover"
+            alt={name}
+          />
         </div>
 
         <div className="flex flex-col justify-center">
@@ -25,8 +42,8 @@ const ToyDeatilsCard = ({toy}) => {
 
           <ul className="text-gray-700 space-y-1 mb-6">
             <li>⭐ Rating: {rating}</li>
-            <li>📦 Available Stock: {availableQuantity }</li>
-            <li>👤 Seller: {sellerName }</li>
+            <li>📦 Available Stock: {availableQuantity}</li>
+            <li>👤 Seller: {sellerName}</li>
           </ul>
 
           <div className="flex items-center gap-4 mb-6">
@@ -34,12 +51,17 @@ const ToyDeatilsCard = ({toy}) => {
           </div>
 
           <div className="flex gap-4">
-            <button className="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition cursor-pointer">
+            <button
+              onClick={handleAddToCart}
+              className="btn btn-outline text-rose-600"
+            >
               Add to Cart
             </button>
+
             <button
-              onClick={()=>navigate("/")}
-              className="border border-emerald-600 text-emerald-600 px-6 py-2 rounded-lg hover:bg-emerald-50 transition cursor-pointer">
+              onClick={() => navigate("/")}
+              className="border border-emerald-600 text-emerald-600 px-6 py-2 rounded-lg hover:bg-emerald-50 transition cursor-pointer"
+            >
               Back to Toys
             </button>
           </div>
@@ -49,4 +71,4 @@ const ToyDeatilsCard = ({toy}) => {
   );
 };
 
-export default ToyDeatilsCard;
+export default ToyDetailsCard;
