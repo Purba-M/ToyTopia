@@ -72,7 +72,7 @@ const Footer = () => {
         <div className="footer sm:footer-horizontal text-base-content">
           <div>
             <div>
-              <h1 className="font-bold text-[30px]">ToyStore</h1>
+              <h1 className="font-bold text-[30px]">ToyTopia</h1>
               <p className="mt-4 font-semibold text-[15px] text-gray-500 w-[300px]  leading-[1.2] ">
                 ToyStore System,Dhaka,Bangladesh. Must be 18 years or older to
                 purchase online.
@@ -115,19 +115,24 @@ const Footer = () => {
             </div>
           </div>
 
-          <nav>
+          {/* <nav>
             <h6 className="footer-title">Services</h6>
             <a className="link link-hover">Branding</a>
             <a className="link link-hover">Design</a>
             <a className="link link-hover">Marketing</a>
             <a className="link link-hover">Advertisement</a>
-          </nav>
+          </nav> */}
           <nav>
-            <h6 className="footer-title">Company</h6>
+            <h6 className="footer-title ">Company</h6>
             <a className="link link-hover">About us</a>
             <a className="link link-hover">Contact</a>
             <a className="link link-hover">Jobs</a>
             <a className="link link-hover">Press kit</a>
+          </nav>
+          <nav>
+            <h6 className="footer-title ">Information</h6>
+            <a className="link link-hover">Terms & Privacy Policy</a>
+            <a className="link link-hover">Cookie Policy</a>
           </nav>
           {/* <nav>
     <h6 className="footer-title">Social</h6>
@@ -167,7 +172,9 @@ const Footer = () => {
       </a>
     </div>
   </nav> */}
+  
         </div>
+        <p className="text-center mt-10 font-semibold">ToyTopia © 2025 All rights reserved.</p>
       </div>
     </footer>
   );
