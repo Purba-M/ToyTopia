@@ -19,7 +19,7 @@ const ToyDetails = () => {
     setLoading(false);
     },[data,id])
      if (loading) {
-    // ✅ simple loading UI
+   
     return (
       <div className="flex justify-center items-center h-screen">
         <p className="text-emerald-600 text-xl font-semibold animate-pulse">
@@ -30,11 +30,11 @@ const ToyDetails = () => {
   }
 
   if (!toys || Object.keys(toys).length === 0) {
-    // ✅ handle case when toy not found
+  
     return (
       <div className="flex justify-center items-center h-screen">
         <p className="text-red-600 text-lg font-semibold">
-          Toy not found 😢
+          Toy not found 
         </p>
       </div>
     );

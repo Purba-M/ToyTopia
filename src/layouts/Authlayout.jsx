@@ -11,8 +11,11 @@ const Authlayout = () => {
     return (
         <div className='bg-base-200 min-h-screen'>
           
-       <Outlet><LogIn></LogIn>
-       <Register></Register></Outlet>
+       <Outlet><LogIn>
+
+       </LogIn>
+       <Register>
+        </Register></Outlet>
 
            
         </div>
