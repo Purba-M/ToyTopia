@@ -6,8 +6,9 @@ import { Outlet } from 'react-router';
 const MainLayout = () => {
     return (
         <div className="flex flex-col min-h-screen">
-            <header className='container mx-auto px-4 '>
-              <nav><Navbar></Navbar></nav>
+            <header >
+                {import.meta.env.VITE_name}
+              <nav className='container mx-auto px-4'><Navbar></Navbar></nav>
             </header>
             <main  className="flex-grow container mx-auto px-4 py-6">
             <Outlet></Outlet>

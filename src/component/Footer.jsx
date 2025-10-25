@@ -61,32 +61,75 @@
 
 // export default Footer;
 
-
 import React from "react";
-import { FaFacebookF, FaInstagram, FaPinterestP } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-   <footer className="bg-base-300">
-    <div className="container mx-auto px-4 py-10">
-         <div className="footer sm:footer-horizontal text-base-content">
-   
-  <nav>
-    <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
-  </nav>
-  <nav>
-    <h6 className="footer-title">Company</h6>
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
-  </nav>
-  <nav>
+    <footer className="bg-[#96cbc3]">
+      <div className="container mx-auto px-4 py-10">
+        <div className="footer sm:footer-horizontal text-base-content">
+          <div>
+            <div>
+              <h1 className="font-bold text-[30px]">ToyStore</h1>
+              <p className="mt-4 font-semibold text-[15px] text-gray-500 w-[300px]  leading-[1.2] ">
+                ToyStore System,Dhaka,Bangladesh. Must be 18 years or older to
+                purchase online.
+              </p>
+            </div>
+            {/* SOCIAL */}
+            <div className="flex gap-4">
+              <a
+                href="https://facebook.com/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 text-2xl"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://instagram.com/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-600 hover:text-pink-800 text-2xl"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="https://twitter.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-500 hover:text-sky-700 text-2xl">
+                <FaTwitter />
+              </a>
+
+              <a
+                href="https://www.youtube.com/@yourchannelname"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-600 hover:text-red-800 text-2xl"
+              >
+                <FaYoutube />
+              </a>
+            </div>
+          </div>
+
+          <nav>
+            <h6 className="footer-title">Services</h6>
+            <a className="link link-hover">Branding</a>
+            <a className="link link-hover">Design</a>
+            <a className="link link-hover">Marketing</a>
+            <a className="link link-hover">Advertisement</a>
+          </nav>
+          <nav>
+            <h6 className="footer-title">Company</h6>
+            <a className="link link-hover">About us</a>
+            <a className="link link-hover">Contact</a>
+            <a className="link link-hover">Jobs</a>
+            <a className="link link-hover">Press kit</a>
+          </nav>
+          {/* <nav>
     <h6 className="footer-title">Social</h6>
     <div className="grid grid-flow-col gap-4">
       <a>
@@ -123,10 +166,10 @@ const Footer = () => {
         </svg>
       </a>
     </div>
-  </nav>
-  </div>
-  </div>
-</footer>
+  </nav> */}
+        </div>
+      </div>
+    </footer>
   );
 };
 

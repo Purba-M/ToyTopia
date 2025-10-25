@@ -5,9 +5,9 @@ import { Outlet } from 'react-router';
 const Authlayout = () => {
     return (
         <div className='bg-base-200 min-h-screen'>
-            <header className='w-11/12 p-4 mx-auto'>
+            {/* <header className='w-11/12 p-4 mx-auto'>
                 <Navbar></Navbar>
-            </header>
+            </header> */}
 
             <main>
                 <Outlet>
